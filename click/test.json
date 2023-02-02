@@ -1,0 +1,7 @@
+{
+    "app": {
+        "local-dir": "/var/run",
+        "host": "https://example.com",
+        "token": "secret"
+    }
+}

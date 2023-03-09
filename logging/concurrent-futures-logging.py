@@ -75,8 +75,8 @@ def main(n: int, as_completed: bool, workers: int | None = None) -> None:
         queue: DataQueue = m.Queue(-1)
         args = list(range(n, 0, -1))
 
-        # Have to use a process since forking and threading is unsafe; see
-        # fork(2)
+        # Have to use a process since forking from a multithreaded process is
+        # unsafe; see fork(2)
         executor_process = multiprocessing.Process(
             target=executor_runner,
             args=(args, queue, as_completed, workers)
